@@ -9,6 +9,7 @@ import (
 	ospath "path"
 	"strings"
 
+	"github.com/natefinch/lumberjack"
 	"upspin.io/log"
 )
 
@@ -58,4 +59,11 @@ func init() {
 	if *base == "./" {
 		*base = os.Getenv("PWD")
 	}
+	log.SetOutput(&lumberjack.Logger{
+		Filename:   "h2s.log",
+		MaxSize:    500, // megabytes
+		MaxBackups: 3,
+		MaxAge:     28, //days
+	})
+	log.Println("starting...")
 }
