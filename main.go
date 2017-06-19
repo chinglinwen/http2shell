@@ -65,5 +65,4 @@ func init() {
 		MaxBackups: 3,
 		MaxAge:     28, //days
 	})
-	log.Println("starting...")
 }
