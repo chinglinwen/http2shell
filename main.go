@@ -9,8 +9,8 @@ import (
 	ospath "path"
 	"strings"
 
+	"github.com/chinglinwen/log"
 	"github.com/natefinch/lumberjack"
-	"upspin.io/log"
 )
 
 var (
